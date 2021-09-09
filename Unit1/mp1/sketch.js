@@ -14,7 +14,7 @@ function draw() {
 
   if (mouseIsPressed) {
     // stuff that shows when the mouse is pressed
-    
+
   } else {
     // when the mouse isn't pressed!
 
@@ -26,6 +26,7 @@ function draw() {
 
   fill(0);
   text(mouseX + ", " + mouseY, 40, 40);
+  text("This is my back story. \n ")
 
 }
 
