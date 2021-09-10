@@ -71,7 +71,3 @@ function draw() {
 function mouseReleased() {
   print(mouseX + ", " + mouseY);
 }
-
-
-
-  
