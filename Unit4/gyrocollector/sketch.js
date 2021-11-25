@@ -48,7 +48,28 @@ function setup() {
 }
 
 function draw() {
+  switch (state) {
+    case 0: // welcome
+      image(start, width / 2, height / 2, 1500, 850);
+      break;
 
+    case 1: // game state
+      game();
+      timer++;
+      if (timer > 10 * 60) {
+        timer = 0;
+        state = 3;
+      }
+      break;
+
+    case 2: // win state
+      image(youwon, width / 2, height / 2, 1500, 850);
+      break;
+
+    case 3: // lose state
+      image(youlose, width / 2, height / 2, 1500, 850);
+      break;
+  }
   background('#c6f5ff'); // light blue
 
   // the map command !!!!
@@ -92,20 +113,20 @@ function draw() {
 
   // Debugging information -- take this out when you're ready for production!
   // Just a bunch of text commands to display data coming in from addEventListeners
-  textAlign(LEFT);
-  textSize(20);
-  fill('black');
-  text("orientation data:", 25, 25);
-  textSize(15);
-  text("alpha: " + alpha, 25, 50);
-  text("beta: " + beta, 25, 70);
-  text("gamma: " + gamma, 25, 90);
-  textSize(20);
-  text("acceleration data:", 25, 125);
-  textSize(15);
-  text("x = " + x, 25, 150); // .toFixed means just show (x) decimal places
-  text("y = " + y, 25, 170);
-  text("z = " + z, 25, 190);
+  // textAlign(LEFT);
+  // textSize(20);
+  // fill('black');
+  // text("orientation data:", 25, 25);
+  // textSize(15);
+  // text("alpha: " + alpha, 25, 50);
+  // text("beta: " + beta, 25, 70);
+  // text("gamma: " + gamma, 25, 90);
+  // textSize(20);
+  // text("acceleration data:", 25, 125);
+  // textSize(15);
+  // text("x = " + x, 25, 150); // .toFixed means just show (x) decimal places
+  // text("y = " + y, 25, 170);
+  // text("z = " + z, 25, 190);
 
 
 }
