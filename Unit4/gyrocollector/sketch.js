@@ -25,7 +25,7 @@ function setup() {
 
   falcon = loadImage("images/falcon.png");
   trooper = loadImage("images/trooper.png");
-
+  f1 = loadFont("images/Starjedi.ttf");
   // initialize accelerometer variables
   alpha = 0;
   beta = 0;
@@ -48,30 +48,8 @@ function setup() {
 }
 
 function draw() {
-  switch (state) {
-    case 0: // welcome
-      image(start, width / 2, height / 2, 1500, 850);
-      break;
 
-    case 1: // game state
-      game();
-      timer++;
-      if (timer > 10 * 60) {
-        timer = 0;
-        state = 3;
-      }
-      break;
-
-    case 2: // win state
-      image(youwon, width / 2, height / 2, 1500, 850);
-      break;
-
-    case 3: // lose state
-      image(youlose, width / 2, height / 2, 1500, 850);
-      break;
-  }
-  background('#c6f5ff'); // light blue
-
+background('black'); // light blue
   // the map command !!!!
   // takes your variable and maps it from range 1 to range 2
   // map(yourVar, range1_x, range1_y, range2_x, range2_y) ;
@@ -105,8 +83,9 @@ function draw() {
   }
 
   // MORE DECORATIONS - write that pretty ATK type on top.
-  fill('black');
+  fill('yellow');
   textSize(40);
+  textFont(f1);
   textAlign(CENTER);
   text("Catch the troopers!", width / 2, 600, windowWidth - 200, windowHeight - 200);
 
