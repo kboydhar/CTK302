@@ -4,7 +4,7 @@ var f1;
 function setup() {
   createCanvas(500, 500);
   f1 = loadFont("assets/monster.ttf");
-  f2 = loadFont("assets/spider.ttf");
+
   textAlign(CENTER);
 }
 
